@@ -13,20 +13,39 @@ private let reuseIdentifier = "trackCell"
 
 
 class CollectionViewController: UICollectionViewController {
+    private var collectionData: [Track] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let itemsPerRow: CGFloat = 2
+            let padding: CGFloat = 15
+            let totalPadding = padding * (itemsPerRow - 1)
+            let individualPadding = totalPadding / itemsPerRow
+            let width = collectionView.frame.width / itemsPerRow - individualPadding
+            let height = width
+            layout.itemSize = CGSize(width: width, height: height)
+            layout.minimumInteritemSpacing = padding
+            layout.minimumLineSpacing = padding
+        }
+        
+        
         // Do any additional setup after loading the view.
+        WebAPI.getTracks(completion: { response in
+            if let tracks = response {
+                print(tracks)
+                self.collectionData = tracks
+                self.collectionView.reloadData()
+            }
+        })
 
         
     }
+    
     /*
     // MARK: - Navigation
 
@@ -41,23 +60,28 @@ class CollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 8
+        return collectionData.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
     
         // Configure the cell
         
-    
+        cell.load(with: collectionData[indexPath.row])
+        cell.trackArtist.text = collectionData[indexPath.row].strArtist
+        cell.TrackName.text = collectionData[indexPath.row].strTrack
         return cell
     }
+    
+    
+    
     
 
     // MARK: UICollectionViewDelegate
@@ -92,3 +116,4 @@ class CollectionViewController: UICollectionViewController {
     */
 
 }
+
