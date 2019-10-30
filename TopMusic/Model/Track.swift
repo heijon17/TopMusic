@@ -6,6 +6,35 @@
 //  Copyright © 2019 JMHeiberg. All rights reserved.
 //
 
+struct RootLovedTracks: Decodable {
+    var tracks: [Track]
+    
+    enum CodingKeys: String, CodingKey {
+        case tracks = "loved"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.tracks = try values.decode([Track].self, forKey: CodingKeys.tracks)
+    }
+}
+
+
+struct RootTracks: Decodable {
+    var tracks: [Track]
+    
+    enum CodingKeys: String, CodingKey {
+        case tracks = "track"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.tracks = try values.decode([Track].self, forKey: CodingKeys.tracks)
+    }
+}
+
+
+
 struct Track: Decodable {
     var strArtist: String
     var idTrack: String

@@ -15,33 +15,31 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var albumTitle: UILabel!
     @IBOutlet weak var artistName: UILabel!
+    @IBOutlet weak var albumYear: UILabel!
     
 
     
     var tracks: [Track] = []
-    var albumInfo: Track?
+    var albumId: String = ""
     let cellIdentifier = "albumTrackCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.albumTitle.text = albumInfo?.strAlbum
-        self.artistName.text = albumInfo?.strArtist
-        
+        WebAPI.getAlbum(albumId: albumId, completion: { response in
+            if let album = response {
+                self.updateView(with: album[0])
+            }
+        })
 
-        WebAPI.getTracks(albumId: albumInfo?.idAlbum, completion: { response in
+        WebAPI.getTracks(albumId: albumId, completion: { response in
             if let tracks = response {
                 self.tracks = tracks
                 self.trackTable.reloadData()
             }
         })
         
-        if let strUrl = albumInfo?.strTrackThumb {
-            let url = URL(string: strUrl)
-            albumImage.load(url: url!)
-            
-        }
-        albumImage.frame.size = CGSize(width: self.view.frame.width, height: self.view.frame.width)
+ 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,11 +49,24 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DetailsTableViewCell
         
-        cell.textLabel?.text = "\(indexPath.row + 1). \(tracks[indexPath.row].strTrack)"
+        cell.trackName?.text = "\(indexPath.row + 1). \(tracks[indexPath.row].strTrack)"
+        cell.trackDuration.text = Utils.convertSeconds(milliseconds: tracks[indexPath.row].intDuration)
         
         return cell
+    }
+    
+    func updateView(with album: Album) {
+        self.albumTitle.text = album.strAlbum
+        self.artistName.text = album.strArtist
+        self.albumYear.text = album.intYearReleased
+        if let strUrl = album.strAlbumThumb {
+            let url = URL(string: strUrl)
+            albumImage.load(url: url!)
+        } else {
+            albumImage.image = UIImage(named: "Mockup_CD")
+        }
     }
 
     

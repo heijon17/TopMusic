@@ -11,12 +11,12 @@ import Alamofire
 
 class WebAPI {
 
-    static func getMostLoved(completion: @escaping ([Track]?) -> Void){
-        AF.request("https://theaudiodb.com/api/v1/json/1/mostloved.php?format=track").responseJSON { (response) in
+    static func getAlbum(albumId: String, completion: @escaping ([Album]?) -> Void){
+        AF.request("https://theaudiodb.com/api/v1/json/1/album.php?m=\(albumId)").responseJSON { (response) in
             if let json = response.data {
                 do {
-                    let jsonData = try JSONDecoder().decode(RootTracks.self, from: json)
-                    completion(jsonData.tracks)
+                    let jsonData = try JSONDecoder().decode(RootAlbum.self, from: json)
+                    completion(jsonData.album)
                 } catch let error {
                     print(error)
                 }
