@@ -10,7 +10,21 @@ import Foundation
 import Alamofire
 
 class WebAPI {
-
+    
+    static func getAlbumSearch(albumName: String, completion: @escaping ([Album]?) -> Void) {
+        AF.request("https://theaudiodb.com/api/v1/json/1/searchalbum.php?a=\(albumName)").responseJSON { (response) in
+            if let json = response.data {
+                do {
+                    let jsonData = try JSONDecoder().decode(RootAlbum.self, from: json)
+                    completion(jsonData.album)
+                } catch let error {
+                    print(error)
+                    completion([])
+                }
+            }
+        }
+    }
+    
     static func getAlbum(albumId: String, completion: @escaping ([Album]?) -> Void){
         AF.request("https://theaudiodb.com/api/v1/json/1/album.php?m=\(albumId)").responseJSON { (response) in
             if let json = response.data {

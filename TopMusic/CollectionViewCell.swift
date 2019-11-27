@@ -27,6 +27,26 @@ class GridViewCell: UICollectionViewCell {
             trackThumb.load(url: url!)
         }
     }
+    
+    public func load(with album: Album) {
+        trackName.text = album.strAlbum
+        trackArtist.text = album.strArtist
+        
+        if album.strAlbumThumb == nil {
+            trackThumb.image = UIImage(named: "Mockup_CD")
+            return
+        }
+        
+        if let imageUrl = album.strAlbumThumb {
+            let url = URL(string: imageUrl)
+            if let unwrappedUrl = url {
+                trackThumb.load(url: unwrappedUrl)
+            } else {
+                trackThumb.image = UIImage(named: "Mockup_CD")
+            }
+            
+        }
+    }
 }
 
 class ListViewCell: UICollectionViewCell {
@@ -37,6 +57,8 @@ class ListViewCell: UICollectionViewCell {
         trackName.text = "\(rank). " + track.strTrack
         artistName.text = track.strArtist
     }
+    
+
 }
 
 

@@ -14,6 +14,7 @@
 		FA384F062369B0B7009896AE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA384F052369B0B7009896AE /* TableViewController.swift */; };
 		FA384F082369BD29009896AE /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA384F072369BD29009896AE /* DetailsTableViewCell.swift */; };
 		FA65451A2357A1FB00A8836A /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6545192357A1FB00A8836A /* WebAPI.swift */; };
+		FA770536238EA59000BD191C /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA770535238EA59000BD191C /* SearchCollectionViewController.swift */; };
 		FABB34E123531E6F0082A5D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB34E023531E6F0082A5D3 /* AppDelegate.swift */; };
 		FABB34E323531E6F0082A5D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB34E223531E6F0082A5D3 /* SceneDelegate.swift */; };
 		FABB34E823531E6F0082A5D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB34E623531E6F0082A5D3 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		FA384F052369B0B7009896AE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FA384F072369BD29009896AE /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		FA6545192357A1FB00A8836A /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		FA770535238EA59000BD191C /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		FABB34DD23531E6F0082A5D3 /* TopMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABB34E023531E6F0082A5D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABB34E223531E6F0082A5D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				FAF62B1F23577D75002AD82B /* CollectionViewCell.swift */,
 				FACCFB922368B72A00169281 /* DetailsViewController.swift */,
 				FA384F072369BD29009896AE /* DetailsTableViewCell.swift */,
+				FA770535238EA59000BD191C /* SearchCollectionViewController.swift */,
 				FABB34E623531E6F0082A5D3 /* Main.storyboard */,
 				FABB34EC23531E700082A5D3 /* Assets.xcassets */,
 				FABB34EE23531E700082A5D3 /* LaunchScreen.storyboard */,
@@ -352,6 +355,7 @@
 				FA1D10C12369C23E0096D5C7 /* Utils.swift in Sources */,
 				FA65451A2357A1FB00A8836A /* WebAPI.swift in Sources */,
 				FA384F062369B0B7009896AE /* TableViewController.swift in Sources */,
+				FA770536238EA59000BD191C /* SearchCollectionViewController.swift in Sources */,
 				FAF62B1E23577D6A002AD82B /* CollectionViewController.swift in Sources */,
 				FA07E1BD2369EAB7000C330C /* Album.swift in Sources */,
 			);

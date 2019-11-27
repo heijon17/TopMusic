@@ -27,7 +27,7 @@ struct Album: Decodable {
     var strAlbum: String
     var strArtist: String
     var intYearReleased: String
-    var strGenre: String
+    var strGenre: String?
     var strAlbumThumb: String?
     
     enum CodingKeys: String, CodingKey {
@@ -47,7 +47,7 @@ struct Album: Decodable {
         self.strAlbum = try values.decode(String.self, forKey: CodingKeys.strAlbum)
         self.strArtist = try values.decode(String.self, forKey: CodingKeys.strArtist)
         self.intYearReleased = try values.decode(String.self, forKey: CodingKeys.intYearReleased)
-        self.strGenre = try values.decode(String.self, forKey: CodingKeys.strGenre)
-        self.strAlbumThumb = try values.decode(String.self, forKey: CodingKeys.strAlbumThumb)
+        self.strGenre = try values.decode(String?.self, forKey: CodingKeys.strGenre)
+        self.strAlbumThumb = try values.decode(String?.self, forKey: CodingKeys.strAlbumThumb)
     }
 }
