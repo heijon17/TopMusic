@@ -12,6 +12,7 @@
 		FA07E1BD2369EAB7000C330C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07E1BC2369EAB7000C330C /* Album.swift */; };
 		FA1D10C12369C23E0096D5C7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D10C02369C23E0096D5C7 /* Utils.swift */; };
 		FA21B873238EF87B00C3E047 /* LoadableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21B872238EF87B00C3E047 /* LoadableProtocol.swift */; };
+		FA21B877238FDBE500C3E047 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21B876238FDBE500C3E047 /* FavouritesTableViewController.swift */; };
 		FA384F062369B0B7009896AE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA384F052369B0B7009896AE /* TableViewController.swift */; };
 		FA384F082369BD29009896AE /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA384F072369BD29009896AE /* DetailsTableViewCell.swift */; };
 		FA65451A2357A1FB00A8836A /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6545192357A1FB00A8836A /* WebAPI.swift */; };
@@ -48,6 +49,7 @@
 		FA07E1BC2369EAB7000C330C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		FA1D10C02369C23E0096D5C7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FA21B872238EF87B00C3E047 /* LoadableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableProtocol.swift; sourceTree = "<group>"; };
+		FA21B876238FDBE500C3E047 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
 		FA384F052369B0B7009896AE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FA384F072369BD29009896AE /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		FA6545192357A1FB00A8836A /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
@@ -119,6 +121,25 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		FA21B874238FDB2300C3E047 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FABB34E023531E6F0082A5D3 /* AppDelegate.swift */,
+				FABB34E223531E6F0082A5D3 /* SceneDelegate.swift */,
+			);
+			name = Delegates;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		FA21B875238FDB6B00C3E047 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAF62B1F23577D75002AD82B /* CollectionViewCell.swift */,
+				FA384F072369BD29009896AE /* DetailsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		FABB34D423531E6F0082A5D3 = {
 			isa = PBXGroup;
 			children = (
@@ -142,16 +163,15 @@
 		FABB34DF23531E6F0082A5D3 /* TopMusic */ = {
 			isa = PBXGroup;
 			children = (
+				FA21B875238FDB6B00C3E047 /* Cells */,
+				FA21B874238FDB2300C3E047 /* Delegates */,
 				FA1D10BF2369C2200096D5C7 /* Utils */,
 				FAF62B1C23577D0C002AD82B /* Model */,
-				FABB34E023531E6F0082A5D3 /* AppDelegate.swift */,
-				FABB34E223531E6F0082A5D3 /* SceneDelegate.swift */,
 				FAF62B1D23577D6A002AD82B /* CollectionViewController.swift */,
 				FA384F052369B0B7009896AE /* TableViewController.swift */,
-				FAF62B1F23577D75002AD82B /* CollectionViewCell.swift */,
 				FACCFB922368B72A00169281 /* DetailsViewController.swift */,
-				FA384F072369BD29009896AE /* DetailsTableViewCell.swift */,
 				FA770535238EA59000BD191C /* SearchCollectionViewController.swift */,
+				FA21B876238FDBE500C3E047 /* FavouritesTableViewController.swift */,
 				FABB34E623531E6F0082A5D3 /* Main.storyboard */,
 				FABB34EC23531E700082A5D3 /* Assets.xcassets */,
 				FABB34EE23531E700082A5D3 /* LaunchScreen.storyboard */,
@@ -359,6 +379,7 @@
 				FA65451A2357A1FB00A8836A /* WebAPI.swift in Sources */,
 				FA21B873238EF87B00C3E047 /* LoadableProtocol.swift in Sources */,
 				FA384F062369B0B7009896AE /* TableViewController.swift in Sources */,
+				FA21B877238FDBE500C3E047 /* FavouritesTableViewController.swift in Sources */,
 				FA770536238EA59000BD191C /* SearchCollectionViewController.swift in Sources */,
 				FAF62B1E23577D6A002AD82B /* CollectionViewController.swift in Sources */,
 				FA07E1BD2369EAB7000C330C /* Album.swift in Sources */,
