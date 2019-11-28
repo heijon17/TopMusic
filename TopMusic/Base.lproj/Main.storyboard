@@ -205,20 +205,20 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="albumTrackCell" id="UIT-GB-JYd" customClass="DetailsTableViewCell" customModule="TopMusic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UIT-GB-JYd" id="o6l-M7-C3m">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPk-WE-zO5">
-                                                    <rect key="frame" x="20" y="11" width="286" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="286" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0W-b9-2Ff">
-                                                    <rect key="frame" x="329" y="11" width="66" height="21"/>
+                                                    <rect key="frame" x="329" y="11" width="66" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="55F-da-LTP"/>
                                                     </constraints>
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tug-Ot-O5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2842.0289855072465" y="129.91071428571428"/>
+            <point key="canvasLocation" x="2988" y="130"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sxm-KV-8Su">
@@ -397,10 +397,13 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="U0g-XJ-Vv1"/>
+                    <connections>
+                        <segue destination="gHg-52-oBW" kind="show" identifier="showAlbum" id="lcu-Rb-gol"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkT-DU-DuF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2839" y="862"/>
+            <point key="canvasLocation" x="2987" y="860"/>
         </scene>
     </scenes>
     <resources>
@@ -409,4 +412,7 @@
         <image name="square.grid.2x2.fill" catalog="system" width="64" height="56"/>
         <image name="star.circle" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lcu-Rb-gol"/>
+    </inferredMetricsTieBreakers>
 </document>

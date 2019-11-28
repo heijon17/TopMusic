@@ -35,14 +35,15 @@ struct RootTracks: Decodable {
 
 
 
-struct Track: Decodable {
+struct Track: Decodable, Loadable {
+    
     var strArtist: String
     var idTrack: String
-    var strTrack: String
+    var strName: String
     var idAlbum: String
     var strAlbum: String
     var intDuration: String
-    var strTrackThumb: String?
+    var strThumb: String?
     
     enum CodingKeys: String, CodingKey {
         case strArtist = "strArtist"
@@ -58,10 +59,10 @@ struct Track: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.strArtist = try values.decode(String.self, forKey: .strArtist)
         self.idTrack = try values.decode(String.self, forKey: .idTrack)
-        self.strTrack = try values.decode(String.self, forKey: .strTrack)
+        self.strName = try values.decode(String.self, forKey: .strTrack)
         self.idAlbum = try values.decode(String.self, forKey: .idAlbum)
         self.strAlbum = try values.decode(String.self, forKey: .strAlbum)
         self.intDuration = try values.decode(String.self, forKey: .intDuration)
-        self.strTrackThumb = try values.decode(String?.self, forKey: .strTrackThumb)
+        self.strThumb = try values.decode(String?.self, forKey: .strTrackThumb)
     }
 }

@@ -21,14 +21,14 @@ struct RootAlbum: Decodable {
     }
 }
 
-struct Album: Decodable {
+struct Album: Decodable, Loadable {
     var idAlbum: String
     var idArtist: String
-    var strAlbum: String
+    var strName: String
     var strArtist: String
     var intYearReleased: String
     var strGenre: String?
-    var strAlbumThumb: String?
+    var strThumb: String?
     
     enum CodingKeys: String, CodingKey {
         case idAlbum = "idAlbum"
@@ -44,10 +44,10 @@ struct Album: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.idAlbum = try values.decode(String.self, forKey: CodingKeys.idAlbum)
         self.idArtist = try values.decode(String.self, forKey: CodingKeys.idArtist)
-        self.strAlbum = try values.decode(String.self, forKey: CodingKeys.strAlbum)
+        self.strName = try values.decode(String.self, forKey: CodingKeys.strAlbum)
         self.strArtist = try values.decode(String.self, forKey: CodingKeys.strArtist)
         self.intYearReleased = try values.decode(String.self, forKey: CodingKeys.intYearReleased)
         self.strGenre = try values.decode(String?.self, forKey: CodingKeys.strGenre)
-        self.strAlbumThumb = try values.decode(String?.self, forKey: CodingKeys.strAlbumThumb)
+        self.strThumb = try values.decode(String?.self, forKey: CodingKeys.strAlbumThumb)
     }
 }

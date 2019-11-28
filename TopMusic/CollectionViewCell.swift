@@ -14,37 +14,27 @@ class GridViewCell: UICollectionViewCell {
     @IBOutlet weak var trackName: UILabel!
     
     public func load(with track: Track, rank: Int) {
-        trackArtist.text = "\(rank). " + track.strArtist
-        trackName.text = track.strTrack
-        
-        if track.strTrackThumb == nil {
-            trackThumb.image = UIImage(named: "Mockup_CD")
-            return
-        }
-        
-        if let imageUrl = track.strTrackThumb {
-            let url = URL(string: imageUrl)
-            trackThumb.load(url: url!)
-        }
+        var trackToLoad = track
+        trackToLoad.strArtist = "\(rank). " + track.strArtist
+        loadCell(with: trackToLoad)
     }
     
     public func load(with album: Album) {
-        trackName.text = album.strAlbum
-        trackArtist.text = album.strArtist
-        
-        if album.strAlbumThumb == nil {
-            trackThumb.image = UIImage(named: "Mockup_CD")
-            return
-        }
-        
-        if let imageUrl = album.strAlbumThumb {
-            let url = URL(string: imageUrl)
-            if let unwrappedUrl = url {
-                trackThumb.load(url: unwrappedUrl)
-            } else {
-                trackThumb.image = UIImage(named: "Mockup_CD")
+        loadCell(with: album)
+    }
+    
+    private func loadCell(with item: Any) {
+        if let itemToLoad = item as? Loadable {
+            trackName.text = itemToLoad.strName
+            trackArtist.text = itemToLoad.strArtist
+            if let imageUrl = itemToLoad.strThumb {
+                let url = URL(string: imageUrl)
+                if let urlUnwrapped = url {
+                    trackThumb.load(url: urlUnwrapped)
+                    return
+                }
             }
-            
+            trackThumb.image = UIImage(named: "Mockup_CD")
         }
     }
 }
@@ -54,14 +44,10 @@ class ListViewCell: UICollectionViewCell {
     @IBOutlet weak var artistName: UILabel!
     
     public func load(with track: Track, rank: Int) {
-        trackName.text = "\(rank). " + track.strTrack
+        trackName.text = "\(rank). " + track.strName
         artistName.text = track.strArtist
     }
-    
-
 }
-
-
 
 // https://www.hackingwithswift.com/example-code/uikit/how-to-load-a-remote-image-url-into-uiimageview
 

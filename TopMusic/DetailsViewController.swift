@@ -38,8 +38,6 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.trackTable.reloadData()
             }
         })
-        
- 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,22 +49,24 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DetailsTableViewCell
         
-        cell.trackName?.text = "\(indexPath.row + 1). \(tracks[indexPath.row].strTrack)"
+        cell.trackName?.text = "\(indexPath.row + 1). \(tracks[indexPath.row].strName)"
         cell.trackDuration.text = Utils.convertSeconds(milliseconds: tracks[indexPath.row].intDuration)
         
         return cell
     }
     
     func updateView(with album: Album) {
-        self.albumTitle.text = album.strAlbum
+        self.albumTitle.text = album.strName
         self.artistName.text = album.strArtist
         self.albumYear.text = album.intYearReleased
-        if let strUrl = album.strAlbumThumb {
+        if let strUrl = album.strThumb {
             let url = URL(string: strUrl)
-            albumImage.load(url: url!)
-        } else {
-            albumImage.image = UIImage(named: "Mockup_CD")
+            if let unwrappedUrl = url {
+                albumImage.load(url: unwrappedUrl)
+                return
+            }
         }
+        albumImage.image = UIImage(named: "Mockup_CD")
     }
 
     

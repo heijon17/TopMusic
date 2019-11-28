@@ -10,17 +10,14 @@ import UIKit
 
 private let reuseIdentifier = "trackGridCell"
 
-
-
-
 class SearchCollectionViewController: CollectionViewController {
 
     private var searchResults: [Album] = []
+    private var selectedAlbum: Album?
     
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
-        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,15 +27,15 @@ class SearchCollectionViewController: CollectionViewController {
 
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? DetailsViewController {
+            vc.albumId = selectedAlbum!.idAlbum
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -49,7 +46,6 @@ class SearchCollectionViewController: CollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return searchResults.count
     }
 
@@ -57,7 +53,6 @@ class SearchCollectionViewController: CollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
             as! GridViewCell
     
-        // Configure the cell
         cell.load(with: searchResults[indexPath.row])
         return cell
     }
@@ -73,6 +68,11 @@ class SearchCollectionViewController: CollectionViewController {
     }
 
     // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedAlbum = searchResults[indexPath.row]
+        performSegue(withIdentifier: "showAlbum", sender: self)
+    }
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
