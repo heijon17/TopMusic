@@ -63,7 +63,18 @@ class SearchCollectionViewController: CollectionViewController {
             if let album = response {
                 self.searchResults = album
                 self.collectionView.reloadData()
+                if album.isEmpty {
+                    self.showAlert(message: "No results for \(searchString)")
+                }
             }
+        })
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            self.dismiss(animated: true, completion: nil)
         })
     }
 
