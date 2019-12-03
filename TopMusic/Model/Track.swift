@@ -68,13 +68,5 @@ struct Track: Decodable, Loadable {
         self.strThumb = try values.decode(String?.self, forKey: .strTrackThumb)
     }
     
-    public init(artist: String, trackId: String, name: String, albumId: String, album: String, duration: String, thumb: String?) {
-        strArtist = artist
-        idTrack = trackId
-        strName = name
-        idAlbum = albumId
-        strAlbum = album
-        intDuration = duration
-        strThumb = thumb
-    }
+
 }
