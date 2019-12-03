@@ -33,13 +33,17 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     }
     
     @IBAction func toggleGridView(_ sender: UIBarButtonItem) {
-        listView = false
-        collectionView.reloadData()
+        if (listView) {
+            listView = false
+            collectionView.reloadData()
+        }
     }
     
     @IBAction func toggleListView(_ sender: UIBarButtonItem) {
-        listView = true
-        collectionView.reloadData()
+        if (!listView) {
+            listView = true
+            collectionView.reloadData()
+        }
     }
     
     
