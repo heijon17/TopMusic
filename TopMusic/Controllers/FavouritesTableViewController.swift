@@ -55,8 +55,14 @@ class FavouritesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            removeFavourite(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let alert = UIAlertController(title: "Delete from favourites?", message: "Do you want to remove '\(favourites[indexPath.row].strName)' from favourites?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Remove", style: .default, handler: {_ in
+                self.removeFavourite(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }))
+            self.present(alert, animated: true)
+
         }
     }
     
