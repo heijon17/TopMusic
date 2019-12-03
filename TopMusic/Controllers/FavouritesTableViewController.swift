@@ -60,6 +60,19 @@ class FavouritesTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let trackToMove = favourites[sourceIndexPath.row]
+        favourites.remove(at: sourceIndexPath.row)
+        favourites.insert(trackToMove, at: destinationIndexPath.row)
+        
+        do {
+            try CoreDataService.updateOrder(tracks: favourites)
+        } catch let error {
+            print("\(error)")
+        }
+        
+    }
+    
 
     
     // MARK: - Navigation
@@ -81,7 +94,7 @@ class FavouritesTableViewController: UITableViewController {
     private func removeFavourite(at index: Int) {
         let itemToRemove = favourites[index] as NSManagedObject
         do {
-            try CoreDataService.remove(at: index, itemToRemove: itemToRemove)
+            try CoreDataService.remove(itemToRemove: itemToRemove)
             favourites.remove(at: index)
         } catch let error {
             print("\(error)")

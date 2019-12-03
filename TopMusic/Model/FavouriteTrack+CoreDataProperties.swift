@@ -23,5 +23,6 @@ extension FavouriteTrack {
     @NSManaged public var strArtist: String
     @NSManaged public var strName: String
     @NSManaged public var strThumb: String?
+    @NSManaged public var position: Int16
 
 }

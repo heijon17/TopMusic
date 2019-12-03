@@ -4,12 +4,13 @@
         <attribute name="idAlbum" attributeType="String"/>
         <attribute name="idTrack" attributeType="String"/>
         <attribute name="intDuration" attributeType="String"/>
+        <attribute name="position" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="strAlbum" attributeType="String"/>
         <attribute name="strArtist" attributeType="String"/>
         <attribute name="strName" attributeType="String"/>
         <attribute name="strThumb" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="FavouriteTrack" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="FavouriteTrack" positionX="-63" positionY="-18" width="128" height="163"/>
     </elements>
 </model>

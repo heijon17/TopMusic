@@ -86,7 +86,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         do {
-            try CoreDataService.add(track: selectedTrack)
+            try CoreDataService.add(track: selectedTrack, index: index)
             showAlert(message: "\(selectedTrack.strName) added to Favourites!")
         } catch let error {
             showAlert(message: "\(error)")
