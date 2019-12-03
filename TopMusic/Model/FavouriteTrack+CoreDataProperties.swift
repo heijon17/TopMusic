@@ -16,12 +16,12 @@ extension FavouriteTrack {
         return NSFetchRequest<FavouriteTrack>(entityName: "FavouriteTrack")
     }
 
-    @NSManaged public var idAlbum: String?
-    @NSManaged public var idTrack: String?
-    @NSManaged public var intDuration: String?
-    @NSManaged public var strAlbum: String?
-    @NSManaged public var strArtist: String?
-    @NSManaged public var strName: String?
+    @NSManaged public var idAlbum: String
+    @NSManaged public var idTrack: String
+    @NSManaged public var intDuration: String
+    @NSManaged public var strAlbum: String
+    @NSManaged public var strArtist: String
+    @NSManaged public var strName: String
     @NSManaged public var strThumb: String?
 
 }

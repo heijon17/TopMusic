@@ -32,10 +32,11 @@ class FavouritesTableViewController: UITableViewController {
         let moc =  (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
             favourites = try moc.fetch(FavouriteTrack.fetchRequest())
+            tableView.reloadData()
         } catch let error as NSError {
             print("Failed to fetch. \(error), \(error.userInfo)")
         }
-        print(favourites)
+        
     }
 
     // MARK: - Table view data source
@@ -52,10 +53,12 @@ class FavouritesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteCell", for: indexPath)
-
-        cell.textLabel?.text = favourites[indexPath.row].strName
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteCell", for: indexPath) as! FavouriteTableViewCell
+        
+        cell.artistName.text = favourites[indexPath.row].strArtist
+        cell.trackName.text = favourites[indexPath.row].strName
+        cell.trackDuration.text = Utils.convertSeconds(milliseconds: favourites[indexPath.row].intDuration)
+        
         return cell
     }
     

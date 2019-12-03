@@ -9,7 +9,10 @@
 import UIKit
 
 class FavouriteTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var trackName: UILabel!
+    @IBOutlet weak var artistName: UILabel!
+    @IBOutlet weak var trackDuration: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

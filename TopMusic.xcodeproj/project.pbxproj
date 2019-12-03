@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		4D101BC734D736A423FF3FFA /* Pods_TopMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1728ABED4B7F0E2BC9791E8 /* Pods_TopMusic.framework */; };
 		DEC47D404189DC9B1168526D /* Pods_TopMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC2820BD9728A68B121C1D6 /* Pods_TopMusicTests.framework */; };
+		FA0229DC239523DF009654CF /* FavouriteTrack+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0229DA239523DF009654CF /* FavouriteTrack+CoreDataProperties.swift */; };
+		FA0229DD239523DF009654CF /* FavouriteTrack+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0229DB239523DF009654CF /* FavouriteTrack+CoreDataClass.swift */; };
 		FA07E1BD2369EAB7000C330C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07E1BC2369EAB7000C330C /* Album.swift */; };
 		FA1D10C12369C23E0096D5C7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D10C02369C23E0096D5C7 /* Utils.swift */; };
 		FA21B873238EF87B00C3E047 /* LoadableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21B872238EF87B00C3E047 /* LoadableProtocol.swift */; };
 		FA21B877238FDBE500C3E047 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21B876238FDBE500C3E047 /* FavouritesTableViewController.swift */; };
-		FA384F062369B0B7009896AE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA384F052369B0B7009896AE /* TableViewController.swift */; };
+		FA21B879238FE25D00C3E047 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21B878238FE25D00C3E047 /* FavouriteTableViewCell.swift */; };
 		FA384F082369BD29009896AE /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA384F072369BD29009896AE /* DetailsTableViewCell.swift */; };
 		FA65451A2357A1FB00A8836A /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6545192357A1FB00A8836A /* WebAPI.swift */; };
 		FA770536238EA59000BD191C /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA770535238EA59000BD191C /* SearchCollectionViewController.swift */; };
+		FA7FB10D2393EDA7003C6264 /* Favourites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA7FB10B2393EDA7003C6264 /* Favourites.xcdatamodeld */; };
 		FABB34E123531E6F0082A5D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB34E023531E6F0082A5D3 /* AppDelegate.swift */; };
 		FABB34E323531E6F0082A5D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB34E223531E6F0082A5D3 /* SceneDelegate.swift */; };
 		FABB34E823531E6F0082A5D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB34E623531E6F0082A5D3 /* Main.storyboard */; };
-		FABB34EB23531E6F0082A5D3 /* TopMusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FABB34E923531E6F0082A5D3 /* TopMusic.xcdatamodeld */; };
 		FABB34ED23531E700082A5D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABB34EC23531E700082A5D3 /* Assets.xcassets */; };
 		FABB34F023531E700082A5D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB34EE23531E700082A5D3 /* LaunchScreen.storyboard */; };
 		FABB34FB23531E700082A5D3 /* TopMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB34FA23531E700082A5D3 /* TopMusicTests.swift */; };
@@ -46,19 +48,21 @@
 		4BDDADD181C1B5D0A0F41030 /* Pods-TopMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopMusic.debug.xcconfig"; path = "Target Support Files/Pods-TopMusic/Pods-TopMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		7BA3B33F4FA6AF9936208AC5 /* Pods-TopMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopMusic.release.xcconfig"; path = "Target Support Files/Pods-TopMusic/Pods-TopMusic.release.xcconfig"; sourceTree = "<group>"; };
 		E1728ABED4B7F0E2BC9791E8 /* Pods_TopMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0229DA239523DF009654CF /* FavouriteTrack+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavouriteTrack+CoreDataProperties.swift"; path = "/Users/jonma/Documents/Skole/Frontend og mobilutvikling/PG5600-iOS Programmering/Eksamen/TopMusic/TopMusic/Model/FavouriteTrack+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		FA0229DB239523DF009654CF /* FavouriteTrack+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavouriteTrack+CoreDataClass.swift"; path = "/Users/jonma/Documents/Skole/Frontend og mobilutvikling/PG5600-iOS Programmering/Eksamen/TopMusic/TopMusic/Model/FavouriteTrack+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		FA07E1BC2369EAB7000C330C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		FA1D10C02369C23E0096D5C7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FA21B872238EF87B00C3E047 /* LoadableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableProtocol.swift; sourceTree = "<group>"; };
 		FA21B876238FDBE500C3E047 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
-		FA384F052369B0B7009896AE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FA21B878238FE25D00C3E047 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		FA384F072369BD29009896AE /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		FA6545192357A1FB00A8836A /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
 		FA770535238EA59000BD191C /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		FA7FB10C2393EDA7003C6264 /* Favourites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favourites.xcdatamodel; sourceTree = "<group>"; };
 		FABB34DD23531E6F0082A5D3 /* TopMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABB34E023531E6F0082A5D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABB34E223531E6F0082A5D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FABB34E723531E6F0082A5D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FABB34EA23531E6F0082A5D3 /* TopMusic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TopMusic.xcdatamodel; sourceTree = "<group>"; };
 		FABB34EC23531E700082A5D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FABB34EF23531E700082A5D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FABB34F123531E700082A5D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,6 +125,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		FA20290423966817006B9DA8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAF62B1D23577D6A002AD82B /* CollectionViewController.swift */,
+				FACCFB922368B72A00169281 /* DetailsViewController.swift */,
+				FA770535238EA59000BD191C /* SearchCollectionViewController.swift */,
+				FA21B876238FDBE500C3E047 /* FavouritesTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		FA21B874238FDB2300C3E047 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +151,7 @@
 			children = (
 				FAF62B1F23577D75002AD82B /* CollectionViewCell.swift */,
 				FA384F072369BD29009896AE /* DetailsTableViewCell.swift */,
+				FA21B878238FE25D00C3E047 /* FavouriteTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -163,20 +179,16 @@
 		FABB34DF23531E6F0082A5D3 /* TopMusic */ = {
 			isa = PBXGroup;
 			children = (
+				FA20290423966817006B9DA8 /* Controllers */,
 				FA21B875238FDB6B00C3E047 /* Cells */,
 				FA21B874238FDB2300C3E047 /* Delegates */,
 				FA1D10BF2369C2200096D5C7 /* Utils */,
 				FAF62B1C23577D0C002AD82B /* Model */,
-				FAF62B1D23577D6A002AD82B /* CollectionViewController.swift */,
-				FA384F052369B0B7009896AE /* TableViewController.swift */,
-				FACCFB922368B72A00169281 /* DetailsViewController.swift */,
-				FA770535238EA59000BD191C /* SearchCollectionViewController.swift */,
-				FA21B876238FDBE500C3E047 /* FavouritesTableViewController.swift */,
+				FA7FB10B2393EDA7003C6264 /* Favourites.xcdatamodeld */,
 				FABB34E623531E6F0082A5D3 /* Main.storyboard */,
 				FABB34EC23531E700082A5D3 /* Assets.xcassets */,
 				FABB34EE23531E700082A5D3 /* LaunchScreen.storyboard */,
 				FABB34F123531E700082A5D3 /* Info.plist */,
-				FABB34E923531E6F0082A5D3 /* TopMusic.xcdatamodeld */,
 			);
 			path = TopMusic;
 			sourceTree = "<group>";
@@ -193,6 +205,8 @@
 		FAF62B1C23577D0C002AD82B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA0229DB239523DF009654CF /* FavouriteTrack+CoreDataClass.swift */,
+				FA0229DA239523DF009654CF /* FavouriteTrack+CoreDataProperties.swift */,
 				FAF62B1A23577B47002AD82B /* Track.swift */,
 				FA07E1BC2369EAB7000C330C /* Album.swift */,
 				FA21B872238EF87B00C3E047 /* LoadableProtocol.swift */,
@@ -368,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FABB34EB23531E6F0082A5D3 /* TopMusic.xcdatamodeld in Sources */,
 				FABB34E123531E6F0082A5D3 /* AppDelegate.swift in Sources */,
 				FAF62B2023577D75002AD82B /* CollectionViewCell.swift in Sources */,
 				FACCFB932368B72A00169281 /* DetailsViewController.swift in Sources */,
@@ -376,13 +389,16 @@
 				FAF62B1B23577B47002AD82B /* Track.swift in Sources */,
 				FA384F082369BD29009896AE /* DetailsTableViewCell.swift in Sources */,
 				FA1D10C12369C23E0096D5C7 /* Utils.swift in Sources */,
+				FA0229DC239523DF009654CF /* FavouriteTrack+CoreDataProperties.swift in Sources */,
+				FA7FB10D2393EDA7003C6264 /* Favourites.xcdatamodeld in Sources */,
 				FA65451A2357A1FB00A8836A /* WebAPI.swift in Sources */,
 				FA21B873238EF87B00C3E047 /* LoadableProtocol.swift in Sources */,
-				FA384F062369B0B7009896AE /* TableViewController.swift in Sources */,
+				FA0229DD239523DF009654CF /* FavouriteTrack+CoreDataClass.swift in Sources */,
 				FA21B877238FDBE500C3E047 /* FavouritesTableViewController.swift in Sources */,
 				FA770536238EA59000BD191C /* SearchCollectionViewController.swift in Sources */,
 				FAF62B1E23577D6A002AD82B /* CollectionViewController.swift in Sources */,
 				FA07E1BD2369EAB7000C330C /* Album.swift in Sources */,
+				FA21B879238FE25D00C3E047 /* FavouriteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,13 +671,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FABB34E923531E6F0082A5D3 /* TopMusic.xcdatamodeld */ = {
+		FA7FB10B2393EDA7003C6264 /* Favourites.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FABB34EA23531E6F0082A5D3 /* TopMusic.xcdatamodel */,
+				FA7FB10C2393EDA7003C6264 /* Favourites.xcdatamodel */,
 			);
-			currentVersion = FABB34EA23531E6F0082A5D3 /* TopMusic.xcdatamodel */;
-			path = TopMusic.xcdatamodeld;
+			currentVersion = FA7FB10C2393EDA7003C6264 /* Favourites.xcdatamodel */;
+			path = Favourites.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
