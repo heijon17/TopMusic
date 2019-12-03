@@ -18,8 +18,6 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var albumYear: UILabel!
     
-
-    
     var tracks: [Track] = []
     var albumId: String = ""
     let cellIdentifier = "albumTrackCell"
@@ -74,64 +72,46 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let alert = UIAlertController(title: "Add to favourite?", message: "Do you want to add '\(tracks[indexPath.row].strName)' to favourites?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: {_ in
-            self.addToFavourite(index: indexPath.row)
+            self.addToFavourite(at: indexPath.row)
         }))
         self.present(alert, animated: true)
     }
     
-    func addToFavourite(index: Int) {
-        
+    func addToFavourite(at index: Int) {
         let selectedTrack = tracks[index]
         
-        let moc =  (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-       
-        
-         
-        let entity = NSEntityDescription.entity(forEntityName: "FavouriteTrack", in: moc)
-        let newFavouriteTrack = FavouriteTrack(entity: entity!, insertInto: moc)
-        
-        newFavouriteTrack.setValue(selectedTrack.idAlbum, forKey: "idAlbum")
-        newFavouriteTrack.setValue(selectedTrack.idTrack, forKey: "idTrack")
-        newFavouriteTrack.setValue(selectedTrack.intDuration, forKey: "intDuration")
-        newFavouriteTrack.setValue(selectedTrack.strAlbum, forKey: "strAlbum")
-        newFavouriteTrack.setValue(selectedTrack.strArtist, forKey: "strArtist")
-        newFavouriteTrack.setValue(selectedTrack.strName, forKey: "strName")
-        newFavouriteTrack.setValue(selectedTrack.strThumb, forKey: "strThumb")
-        
-        do {
-            try moc.save()
-            print("saved")
-        } catch {
-            print("failed saving")
+        if (favouriteExists(track: selectedTrack)) {
+            showAlert(message: "\(selectedTrack.strName) already exists in favourites!")
+            return
         }
         
-        
-          // read from core data
-        /*
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavouriteTrack")
-        request.returnsObjectsAsFaults = false
-        
         do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                let newTrack: Track = Track(
-                    artist: (data.value(forKey: "strArtist") as? String)!,
-                    trackId: (data.value(forKey: "idTrack") as? String)!,
-                    name: (data.value(forKey: "strName") as? String)!,
-                    albumId: (data.value(forKey: "idAlbum") as? String)!,
-                    album: (data.value(forKey: "strAlbum") as? String)!,
-                    duration: (data.value(forKey: "intDuration") as? String)!,
-                    thumb: data.value(forKey: "strArtist") as? String
-                )
-                
-                print(newTrack)
+            try CoreDataService.add(track: selectedTrack)
+            showAlert(message: "\(selectedTrack.strName) added to Favourites!")
+        } catch let error {
+            showAlert(message: "\(error)")
+        }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+    
+    func favouriteExists(track: Track) -> Bool {
+        var found = false
+        CoreDataService.favourites(completion: { result in
+            if let favourites = result {
+                let track = favourites.filter({ item in
+                    item.idTrack == track.idTrack
+                })
+                if (!track.isEmpty) { found = true }
             }
-        } catch {
-            print("failed")
-        }
-        */
-        
+        })
+        return found
     }
 
     

@@ -12,42 +12,32 @@ import CoreData
 class FavouritesTableViewController: UITableViewController {
     
     private var favourites = [FavouriteTrack]()
+    private var selectedTrack: FavouriteTrack?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-    
-        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
-        let moc =  (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        do {
-            favourites = try moc.fetch(FavouriteTrack.fetchRequest())
-            tableView.reloadData()
-        } catch let error as NSError {
-            print("Failed to fetch. \(error), \(error.userInfo)")
-        }
         
+        CoreDataService.favourites(completion: { results in
+            if let tracks = results {
+                self.favourites = tracks
+                self.tableView.reloadData()
+            }
+        })
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return favourites.count
     }
 
@@ -61,55 +51,40 @@ class FavouritesTableViewController: UITableViewController {
         
         return cell
     }
+
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            removeFavourite(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+    
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? DetailsViewController {
+            vc.albumId = selectedTrack!.idAlbum
+        }
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedTrack = favourites[indexPath.row]
+        performSegue(withIdentifier: "showFavouriteDetails", sender: self)
+    }
+    
     
     // MARK: Core Data
     
-    
-
+    private func removeFavourite(at index: Int) {
+        let itemToRemove = favourites[index] as NSManagedObject
+        do {
+            try CoreDataService.remove(at: index, itemToRemove: itemToRemove)
+            favourites.remove(at: index)
+        } catch let error {
+            print("\(error)")
+        }
+    }
 }
