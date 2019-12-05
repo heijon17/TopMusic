@@ -316,77 +316,6 @@
             </objects>
             <point key="canvasLocation" x="2128.985507246377" y="859.82142857142856"/>
         </scene>
-        <!--Favourite Tracks-->
-        <scene sceneID="Eft-0p-U2h">
-            <objects>
-                <tableViewController storyboardIdentifier="FavouritesTableViewController" id="2lp-Kq-Zki" customClass="FavouritesTableViewController" customModule="TopMusic" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dwz-vg-1Pg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavouriteCell" id="4Jd-MF-qPI" customClass="FavouriteTableViewCell" customModule="TopMusic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Jd-MF-qPI" id="aqo-g2-mpY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auu-uA-8nn">
-                                            <rect key="frame" x="20" y="0.0" width="293" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ArtistName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCx-3x-pAH">
-                                            <rect key="frame" x="20" y="22" width="293" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMf-OR-TPa">
-                                            <rect key="frame" x="334" y="11" width="60" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="PMZ-LE-B6l"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="auu-uA-8nn" firstAttribute="trailing" secondItem="dCx-3x-pAH" secondAttribute="trailing" id="2iX-5X-caK"/>
-                                        <constraint firstItem="dCx-3x-pAH" firstAttribute="top" secondItem="auu-uA-8nn" secondAttribute="bottom" constant="1" id="5In-Ex-264"/>
-                                        <constraint firstItem="auu-uA-8nn" firstAttribute="leading" secondItem="aqo-g2-mpY" secondAttribute="leadingMargin" id="5b1-lQ-k9e"/>
-                                        <constraint firstItem="lMf-OR-TPa" firstAttribute="trailing" secondItem="aqo-g2-mpY" secondAttribute="trailingMargin" id="7rl-au-HUU"/>
-                                        <constraint firstItem="auu-uA-8nn" firstAttribute="leading" secondItem="dCx-3x-pAH" secondAttribute="leading" id="HVO-aQ-DyJ"/>
-                                        <constraint firstItem="lMf-OR-TPa" firstAttribute="top" secondItem="aqo-g2-mpY" secondAttribute="topMargin" id="L4M-B9-QZ1"/>
-                                        <constraint firstItem="lMf-OR-TPa" firstAttribute="leading" secondItem="dCx-3x-pAH" secondAttribute="trailing" constant="21" id="Pgb-6T-mFK"/>
-                                        <constraint firstItem="lMf-OR-TPa" firstAttribute="centerY" secondItem="aqo-g2-mpY" secondAttribute="centerY" id="kaH-ga-bAG"/>
-                                        <constraint firstItem="auu-uA-8nn" firstAttribute="top" secondItem="aqo-g2-mpY" secondAttribute="topMargin" constant="-11" id="qwL-mH-9DZ"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="artistName" destination="dCx-3x-pAH" id="M6D-3r-r88"/>
-                                    <outlet property="trackDuration" destination="lMf-OR-TPa" id="r2n-1l-kH3"/>
-                                    <outlet property="trackName" destination="auu-uA-8nn" id="N46-z1-sLH"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="2lp-Kq-Zki" id="X1Z-1o-PH8"/>
-                            <outlet property="delegate" destination="2lp-Kq-Zki" id="yfc-TG-PJN"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Favourite Tracks" id="nRl-NI-ws4"/>
-                    <connections>
-                        <segue destination="gHg-52-oBW" kind="show" identifier="showFavouriteDetails" id="amV-l7-GOZ"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tmZ-O7-oey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3039.130434782609" y="1540.8482142857142"/>
-        </scene>
         <!--Search Collection View Controller-->
         <scene sceneID="8kj-zt-lF0">
             <objects>
@@ -482,12 +411,170 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2lp-Kq-Zki" kind="relationship" relationship="rootViewController" id="VYd-zp-w3n"/>
+                        <segue destination="Eql-k8-dG3" kind="relationship" relationship="rootViewController" id="Rok-eN-a14"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56r-gG-PzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2128.985507246377" y="1540.8482142857142"/>
+        </scene>
+        <!--Favourite tracks-->
+        <scene sceneID="mwU-Ro-bag">
+            <objects>
+                <viewController id="Eql-k8-dG3" customClass="FavouritesViewController" customModule="TopMusic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7y3-xJ-puW" userLabel="RootView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-93-wi6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="569"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavouriteCell" rowHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="U7f-Xx-vbV" customClass="FavouriteTableViewCell" customModule="TopMusic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U7f-Xx-vbV" translatesAutoresizingMaskIntoConstraints="NO" id="Th7-pP-69A">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ArtistName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y19-Rp-C8m">
+                                                    <rect key="frame" x="20" y="28" width="321" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="GZy-NJ-b5X"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mzd-Vu-0aA">
+                                                    <rect key="frame" x="20" y="2" width="321" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMQ-PB-99j">
+                                                    <rect key="frame" x="349" y="8" width="45" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="0pu-sf-cgt"/>
+                                                        <constraint firstAttribute="width" constant="45" id="hEk-Kt-HiA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lMQ-PB-99j" firstAttribute="bottom" secondItem="Th7-pP-69A" secondAttribute="bottomMargin" constant="1" id="2rG-jM-Dqs"/>
+                                                <constraint firstItem="y19-Rp-C8m" firstAttribute="top" secondItem="Mzd-Vu-0aA" secondAttribute="bottom" constant="4" id="4sg-Se-nXr"/>
+                                                <constraint firstItem="y19-Rp-C8m" firstAttribute="trailing" secondItem="Mzd-Vu-0aA" secondAttribute="trailing" id="7hi-Bd-8em"/>
+                                                <constraint firstItem="y19-Rp-C8m" firstAttribute="leading" secondItem="Mzd-Vu-0aA" secondAttribute="leading" id="HVj-Mt-uX4"/>
+                                                <constraint firstAttribute="trailing" secondItem="lMQ-PB-99j" secondAttribute="trailing" constant="20" id="JB7-dS-XVR"/>
+                                                <constraint firstAttribute="height" constant="50" id="gcb-iu-BRa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistName" destination="y19-Rp-C8m" id="RZt-6e-T3V"/>
+                                            <outlet property="trackDuration" destination="lMQ-PB-99j" id="dxi-Tc-fQ4"/>
+                                            <outlet property="trackName" destination="Mzd-Vu-0aA" id="GyD-Lu-W6g"/>
+                                            <segue destination="gHg-52-oBW" kind="show" identifier="showFavouriteDetails" trigger="accessoryAction" id="Cck-WG-7sq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Eql-k8-dG3" id="wg7-2m-miD"/>
+                                    <outlet property="delegate" destination="Eql-k8-dG3" id="Wvb-of-TJW"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrV-9u-Lg0">
+                                <rect key="frame" x="0.0" y="665" width="414" height="148"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0i-lB-OEr">
+                                        <rect key="frame" x="8" y="8" width="398" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="yYj-SS-x1B"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Recommended Artists">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottomLeft" preservesSuperviewLayoutMargins="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCc-pM-IZZ">
+                                        <rect key="frame" x="0.0" y="38" width="414" height="100"/>
+                                        <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jUs-ri-vfR">
+                                            <size key="itemSize" width="125" height="75"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.65000000000000002" contentMode="center" reuseIdentifier="RecCell" translatesAutoresizingMaskIntoConstraints="NO" id="Ywy-mj-EF6" customClass="RecArtistsCollectionViewCell" customModule="TopMusic" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="12.5" width="125" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="75"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C5l-c5-gkH">
+                                                            <rect key="frame" x="16" y="16" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                <size key="customSize" width="125" height="75"/>
+                                                <connections>
+                                                    <outlet property="artistName" destination="C5l-c5-gkH" id="A08-No-df6"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Eql-k8-dG3" id="VrL-Hr-gd6"/>
+                                            <outlet property="delegate" destination="Eql-k8-dG3" id="i9i-9Q-eLr"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="z0i-lB-OEr" firstAttribute="top" secondItem="mrV-9u-Lg0" secondAttribute="topMargin" id="BDm-Iu-oFK"/>
+                                    <constraint firstItem="z0i-lB-OEr" firstAttribute="trailing" secondItem="mrV-9u-Lg0" secondAttribute="trailingMargin" id="CEX-Dy-4Jr"/>
+                                    <constraint firstItem="UCc-pM-IZZ" firstAttribute="leading" secondItem="mrV-9u-Lg0" secondAttribute="leading" id="GOi-fV-Wrr"/>
+                                    <constraint firstItem="z0i-lB-OEr" firstAttribute="centerX" secondItem="UCc-pM-IZZ" secondAttribute="centerX" id="i77-4O-Cgi"/>
+                                    <constraint firstItem="UCc-pM-IZZ" firstAttribute="top" secondItem="z0i-lB-OEr" secondAttribute="bottom" constant="8" id="k4Z-OM-NPZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="UCc-pM-IZZ" secondAttribute="bottom" constant="10" id="kVg-eo-c8S"/>
+                                    <constraint firstAttribute="height" constant="148" id="lxX-7L-aqX"/>
+                                    <constraint firstItem="z0i-lB-OEr" firstAttribute="leading" secondItem="mrV-9u-Lg0" secondAttribute="leadingMargin" id="tPq-Xd-DQb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mrV-9u-Lg0" firstAttribute="top" secondItem="aMv-93-wi6" secondAttribute="bottom" constant="8" id="Xpv-4T-Ng2"/>
+                            <constraint firstAttribute="bottom" secondItem="mrV-9u-Lg0" secondAttribute="bottom" constant="83" id="a3Q-jV-5CA"/>
+                            <constraint firstItem="mrV-9u-Lg0" firstAttribute="leading" secondItem="7y3-xJ-puW" secondAttribute="leading" id="aP9-g9-xst"/>
+                            <constraint firstItem="aMv-93-wi6" firstAttribute="leading" secondItem="mrV-9u-Lg0" secondAttribute="leading" id="fdM-cr-IXl"/>
+                            <constraint firstItem="aMv-93-wi6" firstAttribute="trailing" secondItem="mrV-9u-Lg0" secondAttribute="trailing" id="wJk-hY-xP2"/>
+                            <constraint firstAttribute="trailing" secondItem="mrV-9u-Lg0" secondAttribute="trailing" id="xRo-PO-CE8"/>
+                            <constraint firstItem="aMv-93-wi6" firstAttribute="top" secondItem="7y3-xJ-puW" secondAttribute="topMargin" id="ywH-LS-QlI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VPQ-3H-6WJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favourite tracks" id="7t3-bl-gN9"/>
+                    <connections>
+                        <outlet property="favouriteTableView" destination="aMv-93-wi6" id="MQg-fc-rQo"/>
+                        <outlet property="recommendedCollectionView" destination="UCc-pM-IZZ" id="CDb-Oh-EKA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jz7-2K-SyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2986.9565217391305" y="1540.8482142857142"/>
         </scene>
     </scenes>
     <resources>
@@ -497,6 +584,6 @@
         <image name="star.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lcu-Rb-gol"/>
+        <segue reference="Cck-WG-7sq"/>
     </inferredMetricsTieBreakers>
 </document>

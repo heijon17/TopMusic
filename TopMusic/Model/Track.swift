@@ -5,8 +5,7 @@
 //  Created by Jon-Martin Heiberg on 16/10/2019.
 //  Copyright © 2019 JMHeiberg. All rights reserved.
 //
-
-import CoreData
+import Foundation
 
 struct RootLovedTracks: Decodable {
     var tracks: [Track]

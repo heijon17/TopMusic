@@ -1,5 +1,5 @@
 //
-//  FavouriteTableViewCell.swift
+//  RecommendedTableViewCell.swift
 //  TopMusic
 //
 //  Created by Jon-Martin Heiberg on 04/12/2019.
@@ -8,11 +8,8 @@
 
 import UIKit
 
-class FavouriteTableViewCell: UITableViewCell {
-    @IBOutlet weak var trackName: UILabel!
-    @IBOutlet weak var artistName: UILabel!
-    @IBOutlet weak var trackDuration: UILabel!
-    
+class RecommendedTableViewCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -66,6 +66,31 @@ class WebAPI {
         }
     }
     
+    static func getRecommendedArtists(favourites: [FavouriteTrack], completion: @escaping ([RecArtist]?) -> Void) {
+        guard favourites.count != 0 else {
+            completion([])
+            return
+        }
+        var query = ""
+        for favourite in favourites {
+            query.append("\(favourite.strArtist),")
+        }
+        query.removeLast()
+        let url = "https://tastedive.com/api/similar?q=\(query)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        AF.request(url).responseJSON { (response) in
+            if let json = response.data {
+                do {
+                    let jsonData = try JSONDecoder().decode(RootRecArtist.self, from: json)
+                    completion(jsonData.similar.results)
+                } catch let error {
+                    print(error)
+                }
+            }
+        }
+        
+    }
+    
     
 }
 
