@@ -6,6 +6,7 @@ Candidatenr. 5039
 * The main page has a CollectionVeiw and uses the WebAPIService to fetch top50 content from the web API.
 * The Search-page is similar to the main page, but uses the WebAPIService to fetch content based on the SearchBar-string.
 * Favourites display favourites stored in CoreData, and lets you remove or reorder them. Also shows recommended artists based on favourite tracks.
+* Reordering the favourites will also update the recommended artists sections, since the API returns recommendations prioritized by the most loved artists.
 * Pressing any item (Album, Track, Favourites) opens the detail-view-page with the selcted items album-info.
 * Pressing any track in the detail-view-page will prompt to add track to favourites.
 * The App has been tested to run on several screen-sizes: iPhone 8 and iPhone 11 Pro Max in simulator, and iPhone X as device, however iPad screen sizes are not tested and might not be supported. 

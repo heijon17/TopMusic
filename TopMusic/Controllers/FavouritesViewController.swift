@@ -94,7 +94,7 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         let trackToMove = favourites[sourceIndexPath.row]
         favourites.remove(at: sourceIndexPath.row)
         favourites.insert(trackToMove, at: destinationIndexPath.row)
-        
+        loadRecommendedArtists()
         do {
             try CoreDataService.updateOrder(tracks: favourites)
         } catch let error {
