@@ -10,7 +10,5 @@ import UIKit
 
 class RecArtistsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var artistName: UILabel!
-    
-    
-    
+
 }

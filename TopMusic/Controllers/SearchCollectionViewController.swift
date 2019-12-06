@@ -18,13 +18,9 @@ class SearchCollectionViewController: CollectionViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
-
     }
 
     
@@ -40,7 +36,6 @@ class SearchCollectionViewController: CollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -59,7 +54,7 @@ class SearchCollectionViewController: CollectionViewController {
     
     func updateWithSearchResults(searchString: String) {
         searchController.isActive = false
-        WebAPI.getAlbumSearch(albumName: searchString, completion: { response in
+        WebAPIService.getAlbumSearch(albumName: searchString, completion: { response in
             if let album = response {
                 self.searchResults = album
                 self.collectionView.reloadData()
@@ -84,36 +79,6 @@ class SearchCollectionViewController: CollectionViewController {
         selectedAlbum = searchResults[indexPath.row]
         performSegue(withIdentifier: "showAlbum", sender: self)
     }
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
 /* https://stackoverflow.com/questions/38300445/how-to-search-when-search-button-clicked-in-keyboard */

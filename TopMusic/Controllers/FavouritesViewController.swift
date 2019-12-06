@@ -21,11 +21,7 @@ class FavouritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         navigationItem.rightBarButtonItem = editButtonItem
-        
-        
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -47,7 +43,7 @@ class FavouritesViewController: UIViewController {
     }
     
     private func loadRecommendedArtists() {
-        WebAPI.getRecommendedArtists(favourites: favourites, completion: { results in
+        WebAPIService.getRecommendedArtists(favourites: favourites, completion: { results in
             if let artists = results {
                 self.recommendedArtists = artists
                 self.recommendedCollectionView.reloadData()
@@ -56,10 +52,6 @@ class FavouritesViewController: UIViewController {
         })
     }
     
-
-    
-
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,14 +59,9 @@ class FavouritesViewController: UIViewController {
             vc.albumId = selectedTrack!.idAlbum
         }
     }
-    
-    
-    
-
 }
 
 // MARK: - Table View
-
 
 extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

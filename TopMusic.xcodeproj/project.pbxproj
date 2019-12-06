@@ -19,10 +19,10 @@
 		FA1D10C12369C23E0096D5C7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D10C02369C23E0096D5C7 /* Utils.swift */; };
 		FA21B873238EF87B00C3E047 /* LoadableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21B872238EF87B00C3E047 /* LoadableProtocol.swift */; };
 		FA384F082369BD29009896AE /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA384F072369BD29009896AE /* DetailsTableViewCell.swift */; };
-		FA65451A2357A1FB00A8836A /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6545192357A1FB00A8836A /* WebAPI.swift */; };
+		FA65451A2357A1FB00A8836A /* WebAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6545192357A1FB00A8836A /* WebAPIService.swift */; };
 		FA770536238EA59000BD191C /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA770535238EA59000BD191C /* SearchCollectionViewController.swift */; };
 		FA7FB10D2393EDA7003C6264 /* Favourites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA7FB10B2393EDA7003C6264 /* Favourites.xcdatamodeld */; };
-		FAA3E1FE239690690079BF24 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3E1FD239690680079BF24 /* CoreData.swift */; };
+		FAA3E1FE239690690079BF24 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3E1FD239690680079BF24 /* CoreDataService.swift */; };
 		FABB34E123531E6F0082A5D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB34E023531E6F0082A5D3 /* AppDelegate.swift */; };
 		FABB34E323531E6F0082A5D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB34E223531E6F0082A5D3 /* SceneDelegate.swift */; };
 		FABB34E823531E6F0082A5D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB34E623531E6F0082A5D3 /* Main.storyboard */; };
@@ -61,10 +61,10 @@
 		FA1D10C02369C23E0096D5C7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FA21B872238EF87B00C3E047 /* LoadableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableProtocol.swift; sourceTree = "<group>"; };
 		FA384F072369BD29009896AE /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
-		FA6545192357A1FB00A8836A /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		FA6545192357A1FB00A8836A /* WebAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIService.swift; sourceTree = "<group>"; };
 		FA770535238EA59000BD191C /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		FA7FB10C2393EDA7003C6264 /* Favourites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favourites.xcdatamodel; sourceTree = "<group>"; };
-		FAA3E1FD239690680079BF24 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		FAA3E1FD239690680079BF24 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		FABB34DD23531E6F0082A5D3 /* TopMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABB34E023531E6F0082A5D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABB34E223531E6F0082A5D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,14 +122,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA1D10BF2369C2200096D5C7 /* Utils */ = {
+		FA1D10BF2369C2200096D5C7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FA6545192357A1FB00A8836A /* WebAPI.swift */,
+				FA6545192357A1FB00A8836A /* WebAPIService.swift */,
 				FA1D10C02369C23E0096D5C7 /* Utils.swift */,
-				FAA3E1FD239690680079BF24 /* CoreData.swift */,
+				FAA3E1FD239690680079BF24 /* CoreDataService.swift */,
 			);
-			path = Utils;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FA20290423966817006B9DA8 /* Controllers */ = {
@@ -190,7 +190,7 @@
 				FA20290423966817006B9DA8 /* Controllers */,
 				FA21B875238FDB6B00C3E047 /* Cells */,
 				FA21B874238FDB2300C3E047 /* Delegates */,
-				FA1D10BF2369C2200096D5C7 /* Utils */,
+				FA1D10BF2369C2200096D5C7 /* Services */,
 				FAF62B1C23577D0C002AD82B /* Model */,
 				FA7FB10B2393EDA7003C6264 /* Favourites.xcdatamodeld */,
 				FABB34E623531E6F0082A5D3 /* Main.storyboard */,
@@ -397,7 +397,7 @@
 				FACCFB932368B72A00169281 /* DetailsViewController.swift in Sources */,
 				FA12F4422397F34F00E87E10 /* FavouriteTableViewCell.swift in Sources */,
 				FABB34E323531E6F0082A5D3 /* SceneDelegate.swift in Sources */,
-				FAA3E1FE239690690079BF24 /* CoreData.swift in Sources */,
+				FAA3E1FE239690690079BF24 /* CoreDataService.swift in Sources */,
 				FA12F4402397EC0B00E87E10 /* FavouritesViewController.swift in Sources */,
 				FA12F44423980CFC00E87E10 /* RecArtist.swift in Sources */,
 				FAF62B1B23577B47002AD82B /* Track.swift in Sources */,
@@ -405,7 +405,7 @@
 				FA1D10C12369C23E0096D5C7 /* Utils.swift in Sources */,
 				FA0229DC239523DF009654CF /* FavouriteTrack+CoreDataProperties.swift in Sources */,
 				FA7FB10D2393EDA7003C6264 /* Favourites.xcdatamodeld in Sources */,
-				FA65451A2357A1FB00A8836A /* WebAPI.swift in Sources */,
+				FA65451A2357A1FB00A8836A /* WebAPIService.swift in Sources */,
 				FA21B873238EF87B00C3E047 /* LoadableProtocol.swift in Sources */,
 				FA0229DD239523DF009654CF /* FavouriteTrack+CoreDataClass.swift in Sources */,
 				FA770536238EA59000BD191C /* SearchCollectionViewController.swift in Sources */,

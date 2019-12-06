@@ -9,7 +9,10 @@
 import Foundation
 import Alamofire
 
-class WebAPI {
+class WebAPIService {
+    
+    // The Alamofire code is inspired by the Lectures and Alamofire docs.
+    // https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#using-alamofire
     
     static func getAlbumSearch(albumName: String, completion: @escaping ([Album]?) -> Void) {
         AF.request("https://theaudiodb.com/api/v1/json/1/searchalbum.php?a=\(albumName)").responseJSON { (response) in

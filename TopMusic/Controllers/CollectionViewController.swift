@@ -9,8 +9,6 @@
 import UIKit
 
 
-
-
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     private var listView = false
     private var lovedTracks: [Track] = []
@@ -19,11 +17,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Do any additional setup after loading the view.
-        WebAPI.getTracks(albumId: nil, completion: { response in
+        WebAPIService.getTracks(albumId: nil, completion: { response in
             if let tracks = response {
                 self.lovedTracks = tracks
                 self.collectionView.reloadData()
@@ -55,7 +50,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             size.height = 50
             size.width = collectionView.frame.width
         } else {
-            
+            // Inspired by https://stackoverflow.com/questions/31662155/how-to-change-uicollectionviewcell-size-programmatically-in-swift
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 let itemsPerRow: CGFloat = 2
                 let padding: CGFloat = 15
@@ -75,25 +70,16 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? DetailsViewController {
             vc.albumId = selectedTrack!.idAlbum
         }
-        
     }
     
     
     // MARK: UICollectionViewDataSource
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return lovedTracks.count
     }
     
@@ -111,48 +97,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
     }
     
-    
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         selectedTrack = lovedTracks[indexPath.row]
         
         performSegue(withIdentifier: "showAlbum", sender: self)
     }
-    
-    
-    
-    
-    // MARK: UICollectionViewDelegate
-    
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
-    
 }
 
